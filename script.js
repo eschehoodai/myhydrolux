@@ -1,6 +1,6 @@
 /**
- * Hydrolux – Main JavaScript
- * Handles navigation, scroll reveals, and smooth interactions
+ * Hydrolux Liquid Intelligence – Main JavaScript
+ * Handles navigation, scroll reveals, smooth interactions, and glassmorphism effects
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initScrollReveal();
     initSmoothScroll();
     initNavbarScroll();
+    initGlassCards();
 });
 
 /**
@@ -61,8 +62,6 @@ function initScrollReveal() {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
-                // Optionally unobserve after revealing
-                // observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
@@ -108,24 +107,39 @@ function initSmoothScroll() {
 
 /**
  * Navbar background on scroll
- * Adds subtle shadow and opacity change when scrolled
+ * Adds subtle border glow and opacity change when scrolled
  */
 function initNavbarScroll() {
     const navbar = document.getElementById('navbar');
     if (!navbar) return;
 
-    let lastScroll = 0;
-
     window.addEventListener('scroll', () => {
         const currentScroll = window.pageYOffset;
 
-        // Add/remove shadow based on scroll position
         if (currentScroll > 50) {
-            navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.3)';
+            navbar.style.borderBottomColor = 'rgba(11, 216, 87, 0.1)';
+            navbar.style.background = 'rgba(13, 21, 12, 0.9)';
         } else {
-            navbar.style.boxShadow = 'none';
+            navbar.style.borderBottomColor = 'rgba(133, 149, 130, 0.12)';
+            navbar.style.background = 'rgba(13, 21, 12, 0.75)';
         }
+    });
+}
 
-        lastScroll = currentScroll;
+/**
+ * Glass Card Enhancement
+ * Applies inner-glow border effect to all glass cards dynamically
+ */
+function initGlassCards() {
+    const glassCards = document.querySelectorAll('.glass-card, .product-card, .nemes-card, .contact-card, .value-card, .visual-card');
+
+    glassCards.forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            card.style.borderColor = 'rgba(11, 216, 87, 0.12)';
+        });
+
+        card.addEventListener('mouseleave', () => {
+            card.style.borderColor = 'transparent';
+        });
     });
 }
