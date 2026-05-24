@@ -170,16 +170,10 @@ img {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 var(--space-md);
+    padding: 0 20px;
 }
 
 @media (min-width: 768px) {
-    .container {
-        padding: 0 40px;
-    }
-}
-
-@media (min-width: 1024px) {
     .container {
         padding: 0 40px;
     }
@@ -280,7 +274,13 @@ p {
     align-items: center;
     justify-content: space-between;
     height: 72px;
-    padding: 0 var(--space-md);
+    padding: 0 20px;
+}
+
+@media (min-width: 768px) {
+    .nav-container {
+        padding: 0 40px;
+    }
 }
 
 .logo {
@@ -447,7 +447,7 @@ p {
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 120px var(--space-md) 80px;
+    padding: 120px 0 80px;
     overflow: hidden;
     background: url('1.jpg') center center / cover no-repeat;
 }
@@ -482,7 +482,8 @@ p {
     z-index: 1;
     width: 100%;
     max-width: 900px;
-    padding: 0 var(--space-md);
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 .hero-caption {
@@ -569,6 +570,7 @@ p {
     text-align: center;
     max-width: 700px;
     margin: 0 auto var(--space-2xl);
+    padding: 0 20px;
 }
 
 .section-caption {
@@ -594,8 +596,10 @@ p {
     height: 1px;
     max-width: 800px;
     margin: 0 auto;
+    padding: 0 20px;
     background: linear-gradient(90deg, transparent, var(--color-primary), transparent);
     opacity: 0.3;
+    background-clip: content-box;
 }
 
 /* ── Intro Section ── */
@@ -917,6 +921,7 @@ p {
 .cta-content {
     max-width: 600px;
     margin: 0 auto;
+    padding: 0 20px;
 }
 
 .cta-content h2 {
@@ -942,6 +947,7 @@ p {
     gap: var(--space-lg);
     max-width: 700px;
     margin: 0 auto;
+    padding: 0 20px;
 }
 
 .contact-card {
@@ -999,7 +1005,7 @@ p {
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 140px var(--space-md) var(--space-2xl);
+    padding: 140px 0 var(--space-2xl);
     overflow: hidden;
     background: url('2.webp') center center / cover no-repeat;
 }
@@ -1020,6 +1026,10 @@ p {
 .page-header-content {
     position: relative;
     z-index: 1;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 .page-caption {
@@ -1132,6 +1142,7 @@ p {
 .story-content {
     max-width: 800px;
     margin: 0 auto;
+    padding: 0 20px;
 }
 
 .story-content h2 {
